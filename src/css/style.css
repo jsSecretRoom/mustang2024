@@ -1,0 +1,921 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Cooper";
+  src: url("../fonts/Cooper-Black-Regular.ttf") format("woff2");
+}
+@font-face {
+  font-family: "Impact";
+  src: url("../fonts/Impact-Regular.ttf") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.ttf") format("woff2");
+}
+body {
+  overflow-x: hidden;
+}
+body header {
+  display: none;
+  grid-template-columns: 1fr;
+  width: 100vi;
+  height: 90vh;
+}
+@media screen and (min-width: 480px) {
+  body header {
+    display: grid;
+  }
+}
+@media screen and (min-width: 768px) {
+  body header {
+    display: grid;
+  }
+}
+@media screen and (min-width: 958px) {
+  body header {
+    height: 40vi;
+  }
+}
+body header .market {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4vi;
+  padding: 2% 1% 1% 1%;
+  height: 90vh;
+}
+@media screen and (min-width: 480px) {
+  body header .market {
+    grid-template-rows: 1fr 8vi;
+  }
+}
+@media screen and (min-width: 768px) {
+  body header .market {
+    grid-template-rows: 1fr 6vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body header .market {
+    height: 40vi;
+  }
+}
+body header .market .ford-home {
+  position: absolute;
+  height: 3vi;
+  width: 3vi;
+  top: 1vi;
+  right: 1vi;
+  border-radius: 10px;
+  background: none;
+  z-index: 1;
+}
+body header .market .ford-home:hover {
+  background-color: #0062ff;
+  transition: background-color 0.5s ease;
+}
+body header .market .ford-home img {
+  height: 3vi;
+  width: 3vi;
+}
+@media screen and (min-width: 480px) {
+  body header .market .ford-home {
+    width: 6vi;
+    height: 6vi;
+  }
+  body header .market .ford-home img {
+    width: 6vi;
+    height: 6vi;
+  }
+}
+@media screen and (min-width: 768px) {
+  body header .market .ford-home {
+    width: 5vi;
+    height: 5vi;
+  }
+  body header .market .ford-home img {
+    width: 5vi;
+    height: 5vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body header .market .ford-home {
+    width: 4vi;
+    height: 4vi;
+  }
+  body header .market .ford-home img {
+    width: 4vi;
+    height: 4vi;
+  }
+}
+body header .market .tabs-market {
+  display: flex;
+  flex-direction: column;
+  width: 30vi;
+  overflow-y: auto;
+  direction: rtl;
+  text-align: left;
+  z-index: 1;
+}
+@media screen and (min-width: 480px) {
+  body header .market .tabs-market {
+    width: 70vi;
+  }
+}
+body header .market .tabs-market .category {
+  display: block;
+}
+body header .market .tabs-market .category.hide {
+  display: none;
+}
+body header .market .tabs-market .category .category-button {
+  font-family: "Impact";
+  color: #ffffff;
+  padding: 2px 0;
+  font-size: 2vi;
+  letter-spacing: 1px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+body header .market .tabs-market .category .category-button:hover {
+  font-size: 2.5vi;
+  color: #00ffcc;
+}
+@media screen and (min-width: 480px) {
+  body header .market .tabs-market .category .category-button {
+    font-size: 4vi;
+  }
+  body header .market .tabs-market .category .category-button:hover {
+    font-size: 4.5vi;
+  }
+}
+@media screen and (min-width: 768px) {
+  body header .market .tabs-market .category .category-button {
+    font-size: 3vi;
+  }
+  body header .market .tabs-market .category .category-button:hover {
+    font-size: 3.5vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body header .market .tabs-market .category .category-button {
+    font-size: 2vi;
+  }
+  body header .market .tabs-market .category .category-button:hover {
+    font-size: 2.5vi;
+  }
+}
+body header .market .tabs-market .category .category-list {
+  display: none;
+  font-family: "Inter";
+  padding: 0 0 0 20px;
+}
+body header .market .tabs-market .category .category-list.show {
+  display: block;
+  animation: slide-in 0.5s ease-in-out;
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+body header .market .tabs-market .category .category-list li .animated-button {
+  color: #ffffff;
+  background: none;
+  padding: 2px;
+  font-size: 1.5vi;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+body header .market .tabs-market .category .category-list li .animated-button:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: width 1s ease;
+}
+body header .market .tabs-market .category .category-list li .animated-button:hover {
+  background: linear-gradient(90deg, #FF0000 0%, #017DCD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2vi;
+  color: #00ffcc;
+}
+body header .market .tabs-market .category .category-list li .animated-button:hover:before {
+  width: 100%;
+}
+@media screen and (min-width: 480px) {
+  body header .market .tabs-market .category .category-list li .animated-button {
+    font-size: 4vi;
+  }
+  body header .market .tabs-market .category .category-list li .animated-button:hover {
+    font-size: 5vi;
+  }
+}
+@media screen and (min-width: 768px) {
+  body header .market .tabs-market .category .category-list li .animated-button {
+    font-size: 2vi;
+  }
+  body header .market .tabs-market .category .category-list li .animated-button:hover {
+    font-size: 2.5vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body header .market .tabs-market .category .category-list li .animated-button {
+    font-size: 1.5vi;
+  }
+  body header .market .tabs-market .category .category-list li .animated-button:hover {
+    font-size: 2vi;
+  }
+}
+body header .market .price-market {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  z-index: 1;
+}
+body header .market .price-market .ford-market-car p {
+  font-family: "Cooper";
+  font-size: 4vi;
+  color: #ffffff;
+}
+body header .market .price-market .ford-market-price p {
+  font-family: "Cooper";
+  font-size: 4vi;
+  color: #ffffff;
+}
+@media screen and (min-width: 480px) {
+  body header .market .price-market {
+    justify-content: center;
+  }
+  body header .market .price-market .ford-market-car {
+    display: none;
+  }
+  body header .market .price-market .ford-market-price p {
+    font-size: 8vi;
+  }
+}
+@media screen and (min-width: 768px) {
+  body header .market .price-market {
+    justify-content: space-between;
+  }
+  body header .market .price-market .ford-market-car {
+    display: block;
+  }
+  body header .market .price-market .ford-market-car p {
+    font-size: 4vi;
+  }
+  body header .market .price-market .ford-market-price p {
+    font-size: 4vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body header .market .price-market {
+    justify-content: space-between;
+  }
+  body header .market .price-market .ford-market-car {
+    display: block;
+  }
+  body header .market .price-market .ford-market-car p {
+    font-size: 3vi;
+  }
+  body header .market .price-market .ford-market-price p {
+    font-size: 3vi;
+  }
+}
+body header .car-foto-conteiner {
+  width: 100vi;
+  height: 90vh;
+  position: absolute;
+  grid-template-columns: 1fr;
+}
+body header .car-foto-conteiner img {
+  width: 100vi;
+  height: 90vh;
+  -o-object-fit: cover;
+     object-fit: cover; /* Масштабирует изображение, сохраняя пропорции и заполняя блок */
+  -o-object-position: center;
+     object-position: center; /* Центрирует изображение в блоке */
+}
+@media screen and (min-width: 958px) {
+  body header .car-foto-conteiner {
+    height: 40vi;
+  }
+  body header .car-foto-conteiner img {
+    height: 40vi;
+  }
+}
+body .ford-nav-bar {
+  background: linear-gradient(90.3deg, #017FCF 0%, #0A1D46 100%);
+  padding: 0% 1%;
+  height: 20vi;
+  width: 100%;
+  z-index: 3;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 480px) {
+  body .ford-nav-bar {
+    width: 100vi;
+  }
+  body .ford-nav-bar .nav-continers .left-nav-continer a img {
+    width: 25vi;
+  }
+}
+@media screen and (min-width: 768px) {
+  body .ford-nav-bar {
+    height: 10vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body .ford-nav-bar {
+    height: 5vi;
+  }
+}
+body .ford-nav-bar .nav-continers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 20vi;
+}
+@media screen and (min-width: 768px) {
+  body .ford-nav-bar .nav-continers {
+    height: 10vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body .ford-nav-bar .nav-continers {
+    justify-content: space-between;
+    height: 5vi;
+  }
+}
+body .ford-nav-bar .nav-continers .left-nav-continer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+body .ford-nav-bar .nav-continers .left-nav-continer a img {
+  width: 35vi;
+}
+body .ford-nav-bar .nav-continers .left-nav-continer .vehicles-button, body .ford-nav-bar .nav-continers .left-nav-continer .shop-button, body .ford-nav-bar .nav-continers .left-nav-continer .support-service-button {
+  background: none;
+  font-size: 1.5vi;
+  font-family: "Inter";
+  display: none;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+body .ford-nav-bar .nav-continers .left-nav-continer .vehicles-button:hover, body .ford-nav-bar .nav-continers .left-nav-continer .shop-button:hover, body .ford-nav-bar .nav-continers .left-nav-continer .support-service-button:hover {
+  font-size: 2vi;
+  color: #00ffcc;
+}
+@media screen and (min-width: 768px) {
+  body .ford-nav-bar .nav-continers .left-nav-continer a img {
+    width: 15vi;
+  }
+  body .ford-nav-bar .nav-continers .left-nav-continer .vehicles-button, body .ford-nav-bar .nav-continers .left-nav-continer .shop-button, body .ford-nav-bar .nav-continers .left-nav-continer .support-service-button {
+    display: block;
+    font-size: 3vi;
+  }
+  body .ford-nav-bar .nav-continers .left-nav-continer .vehicles-button:hover, body .ford-nav-bar .nav-continers .left-nav-continer .shop-button:hover, body .ford-nav-bar .nav-continers .left-nav-continer .support-service-button:hover {
+    font-size: 4vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body .ford-nav-bar .nav-continers .left-nav-continer a img {
+    width: 7vi;
+  }
+  body .ford-nav-bar .nav-continers .left-nav-continer .vehicles-button, body .ford-nav-bar .nav-continers .left-nav-continer .shop-button, body .ford-nav-bar .nav-continers .left-nav-continer .support-service-button {
+    font-size: 1.5vi;
+  }
+  body .ford-nav-bar .nav-continers .left-nav-continer .vehicles-button:hover, body .ford-nav-bar .nav-continers .left-nav-continer .shop-button:hover, body .ford-nav-bar .nav-continers .left-nav-continer .support-service-button:hover {
+    font-size: 2vi;
+  }
+}
+body .ford-nav-bar .nav-continers .right-nav-continer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .authorization-button, body .ford-nav-bar .nav-continers .right-nav-continer .languages-button, body .ford-nav-bar .nav-continers .right-nav-continer .theme-button {
+  display: none;
+  width: 3vi;
+  height: 3vi;
+  background: linear-gradient(180deg, #091E48 0%, #017DCD 100%);
+  border-radius: 10px;
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .authorization-button:hover, body .ford-nav-bar .nav-continers .right-nav-continer .languages-button:hover, body .ford-nav-bar .nav-continers .right-nav-continer .theme-button:hover {
+  background: linear-gradient(180deg, #017DCD 0%, #091E48 100%);
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .authorization-button img, body .ford-nav-bar .nav-continers .right-nav-continer .languages-button img, body .ford-nav-bar .nav-continers .right-nav-continer .theme-button img {
+  width: 2vi;
+  height: 2vi;
+}
+@media screen and (min-width: 768px) {
+  body .ford-nav-bar .nav-continers .right-nav-continer .authorization-button, body .ford-nav-bar .nav-continers .right-nav-continer .languages-button, body .ford-nav-bar .nav-continers .right-nav-continer .theme-button {
+    display: block;
+    width: 5vi;
+    height: 5vi;
+  }
+  body .ford-nav-bar .nav-continers .right-nav-continer .authorization-button img, body .ford-nav-bar .nav-continers .right-nav-continer .languages-button img, body .ford-nav-bar .nav-continers .right-nav-continer .theme-button img {
+    width: 5vi;
+    height: 5vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body .ford-nav-bar .nav-continers .right-nav-continer .authorization-button, body .ford-nav-bar .nav-continers .right-nav-continer .languages-button, body .ford-nav-bar .nav-continers .right-nav-continer .theme-button {
+    width: 3vi;
+    height: 3vi;
+  }
+  body .ford-nav-bar .nav-continers .right-nav-continer .authorization-button img, body .ford-nav-bar .nav-continers .right-nav-continer .languages-button img, body .ford-nav-bar .nav-continers .right-nav-continer .theme-button img {
+    width: 2vi;
+    height: 2vi;
+  }
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper {
+  position: relative;
+  display: none;
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper input {
+  width: 3vi;
+  height: 3vi;
+  border-radius: 10px;
+  border: none;
+  padding: 0 1.5vi 0 1.5vi;
+  transition: all 0.4s ease-in-out;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper input[type=text]:focus {
+  width: 40vi;
+  border-radius: 50px;
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper .search-button {
+  position: absolute;
+  top: 0.25vi;
+  right: 0.2vi;
+  width: 2.5vi;
+  height: 2.5vi;
+  border-radius: 50px;
+  border: none;
+  background-color: #1c61e2;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper .search-button:hover {
+  background-color: #ff7830;
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper .search-button img {
+  width: 2vi;
+  height: 2vi;
+}
+@media screen and (min-width: 768px) {
+  body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper {
+    display: inline-block;
+  }
+  body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper input {
+    width: 5vi;
+    height: 5vi;
+  }
+  body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper .search-button {
+    top: 0.2vi;
+    right: 0.2vi;
+    width: 4.5vi;
+    height: 4.5vi;
+  }
+  body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper .search-button img {
+    width: 4vi;
+    height: 4vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper input {
+    width: 3vi;
+    height: 3vi;
+  }
+  body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper .search-button {
+    width: 2.5vi;
+    height: 2.5vi;
+  }
+  body .ford-nav-bar .nav-continers .right-nav-continer .search-wrapper .search-button img {
+    width: 2vi;
+    height: 2vi;
+  }
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .close-wraper {
+  display: none;
+  background: none;
+  border-radius: 15px;
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .close-wraper:hover {
+  background: rgb(41, 136, 203);
+}
+body .ford-nav-bar .nav-continers .right-nav-continer .close-wraper img {
+  width: 3vi;
+  height: 3vi;
+}
+@media screen and (min-width: 768px) {
+  body .ford-nav-bar .nav-continers .right-nav-continer .close-wraper img {
+    width: 5vi;
+    height: 5vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body .ford-nav-bar .nav-continers .right-nav-continer .close-wraper img {
+    width: 3vi;
+    height: 3vi;
+  }
+}
+body .ford-nav-bar .nav-continers .main-button-conteiner {
+  display: block;
+}
+body .ford-nav-bar .nav-continers .main-button-conteiner .main-button {
+  background: none;
+}
+body .ford-nav-bar .nav-continers .main-button-conteiner .main-button img {
+  width: 10vi;
+  height: 10vi;
+}
+@media screen and (min-width: 768px) {
+  body .ford-nav-bar .nav-continers .main-button-conteiner {
+    display: none;
+  }
+  body .ford-nav-bar .nav-continers .main-button-conteiner .main-button {
+    background: none;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  body .ford-nav-bar .nav-continers .main-button-conteiner .main-button {
+    display: none;
+    background: none;
+  }
+}
+body main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+body main .component1, body main .component2, body main .component4, body main .component5 {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+body main .component1 .conteiner1, body main .component2 .conteiner1, body main .component4 .conteiner1, body main .component5 .conteiner1 {
+  height: 33.3333333333vi;
+}
+body main .component1 .conteiner2, body main .component2 .conteiner2, body main .component4 .conteiner2, body main .component5 .conteiner2 {
+  height: 33.3333333333vi;
+}
+body main .component1 .conteiner3, body main .component2 .conteiner3, body main .component4 .conteiner3, body main .component5 .conteiner3 {
+  height: 33.3333333333vi;
+}
+body main .component3, body main .component6 {
+  display: grid;
+  align-items: center;
+}
+body main .component3 .conteiner1-component2, body main .component6 .conteiner1-component2 {
+  height: 33.3333333333vi;
+}
+body main .component3 .conteiner2-component2, body main .component6 .conteiner2-component2 {
+  height: 33.3333333333vi;
+}
+body main .component1 .conteiner1 {
+  background: linear-gradient(130deg, #017ECD 0%, #021327 100%);
+  padding: 1%;
+}
+body main .component1 .conteiner1 .content1 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(94.94deg, #017FCF 0%, #091D47 100%);
+}
+body main .component1 .conteiner2 img {
+  width: 100%;
+  height: 100%;
+}
+body main .component1 .conteiner3 {
+  background: linear-gradient(98.02deg, #C0C1DF 9.4%, #0065E8 90.87%);
+  padding: 1%;
+}
+body main .component1 .conteiner3 .content1 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+}
+body main .component2 .conteiner1, body main .component2 .conteiner3 {
+  background: linear-gradient(130deg, #017ECD 0%, #021327 100%);
+  display: flex;
+  justify-content: space-between;
+}
+body main .component2 .conteiner1 img, body main .component2 .conteiner3 img {
+  width: 33.3333333333vi;
+  height: 33.3333333333vi;
+}
+body main .component2 .conteiner1 .window, body main .component2 .conteiner3 .window {
+  padding: 1%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(104.04deg, #000000 0%, #0065E8 100%);
+}
+body main .component2 .conteiner1 .window .window-items, body main .component2 .conteiner3 .window .window-items {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(82.46deg, #000000 5.84%, #0065E8 94.15%);
+}
+body main .component2 .conteiner2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+}
+body main .component2 .conteiner2 .ford2 {
+  width: 66.6666666667vi;
+  height: 33.3333333333vi;
+}
+body main .component2 .conteiner2 .ford3 {
+  width: 33.3333333333vi;
+  height: 33.3333333333vi;
+}
+body main .component2 .conteiner3 {
+  background: linear-gradient(98.02deg, #8FA1DB 9.4%, #111F37 90.87%);
+}
+body main .component2 .conteiner3 .content1 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+}
+body main .component3 .conteiner1-component2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+body main .component3 .conteiner1-component2 img {
+  width: 33.3333333333vi;
+}
+body main .component3 .conteiner2-component2 {
+  background: linear-gradient(96.21deg, #010109 0.21%, #667C94 100%);
+  padding: 1%;
+}
+body main .component3 .conteiner2-component2 .content2 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+}
+body main .component4 .conteiner1 {
+  display: flex;
+  justify-content: space-between;
+}
+body main .component4 .conteiner1 .ford9 {
+  width: 66.6666666667vi;
+  height: 33.3333333333vi;
+}
+body main .component4 .conteiner1 .ford10 {
+  height: 33.3333333333vi;
+  width: 33.3333333333vi;
+}
+body main .component4 .conteiner2 {
+  display: flex;
+  justify-content: space-between;
+}
+body main .component4 .conteiner2 .ford11 {
+  height: 33.3333333333vi;
+  width: 33.3333333333vi;
+}
+body main .component4 .conteiner2 .ford12 {
+  width: 66.6666666667vi;
+  height: 33.3333333333vi;
+}
+body main .component4 .conteiner3 {
+  background: linear-gradient(83.66deg, #6B7591 0%, #041328 100%);
+  padding: 1%;
+}
+body main .component4 .conteiner3 .content3 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+}
+body main .component5 .conteiner1 img {
+  width: 100%;
+  height: 100%;
+}
+body main .component5 .conteiner2 {
+  background: linear-gradient(96.34deg, #565A74 0%, #001224 100%);
+  padding: 1%;
+}
+body main .component5 .conteiner2 .content4 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+}
+body main .component5 .conteiner3 img {
+  width: 100%;
+  height: 100%;
+}
+body main .component6 .conteiner1-component2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+body main .component6 .conteiner1-component2 img {
+  width: 33.3333333333vi;
+}
+body main .component6 .conteiner2-component2 {
+  background: linear-gradient(90deg, #7385AE 0%, #074166 100%);
+  padding: 1%;
+}
+body main .component6 .conteiner2-component2 .content5 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+}
+body .ford-footer {
+  background: linear-gradient(90.3deg, #017FCF 0%, #0A1D46 100%);
+  height: 80vi;
+}
+@media screen and (min-width: 768px) {
+  body .ford-footer {
+    height: 40vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body .ford-footer {
+    height: 25vi;
+  }
+}
+body .ford-footer .ford-footer-container {
+  padding: 2% 5%;
+  display: flex;
+  flex-direction: column;
+}
+body .ford-footer .ford-footer-container .row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  body .ford-footer .ford-footer-container .row {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    align-items: start;
+  }
+}
+body .ford-footer .ford-footer-container .row .row-element .list-button {
+  font-family: "Impact";
+  color: #ffffff;
+  font-size: 8vi;
+  padding: 8% 0;
+  letter-spacing: 1px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+body .ford-footer .ford-footer-container .row .row-element .list-button:hover {
+  font-size: 10vi;
+  color: #00ffcc;
+}
+@media screen and (min-width: 480px) {
+  body .ford-footer .ford-footer-container .row .row-element .list-button {
+    font-size: 7vi;
+    padding: 4% 0;
+  }
+  body .ford-footer .ford-footer-container .row .row-element .list-button:hover {
+    font-size: 8vi;
+    color: #00ffcc;
+  }
+}
+@media screen and (min-width: 768px) {
+  body .ford-footer .ford-footer-container .row .row-element .list-button {
+    font-size: 2vi;
+    padding: 4% 0;
+    pointer-events: none;
+  }
+  body .ford-footer .ford-footer-container .row .row-element .list-button:hover {
+    font-size: 3vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body .ford-footer .ford-footer-container .row .row-element .list-button {
+    font-size: 1.7vi;
+  }
+  body .ford-footer .ford-footer-container .row .row-element .list-button:hover {
+    font-size: 2.5vi;
+  }
+}
+body .ford-footer .ford-footer-container .row .row-element .list-unstyled {
+  display: none;
+  font-family: "Inter";
+  padding: 0 0 0 20px;
+}
+body .ford-footer .ford-footer-container .row .row-element .list-unstyled.show {
+  display: block;
+  animation: slide-in 0.5s ease-in-out;
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+body .ford-footer .ford-footer-container .row .row-element .list-unstyled li {
+  padding: 4% 0;
+}
+body .ford-footer .ford-footer-container .row .row-element .list-unstyled li .animated-a {
+  color: #ffffff;
+  background: none;
+  padding: 2px;
+  font-size: 5vi;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+body .ford-footer .ford-footer-container .row .row-element .list-unstyled li .animated-a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: width 1s ease;
+}
+body .ford-footer .ford-footer-container .row .row-element .list-unstyled li .animated-a:hover {
+  background: linear-gradient(90deg, #FF0000 0%, #e8ff1c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 6vi;
+  color: #00ffcc;
+}
+body .ford-footer .ford-footer-container .row .row-element .list-unstyled li .animated-a:hover:before {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  body .ford-footer .ford-footer-container .row .row-element .list-unstyled li .animated-a {
+    font-size: 1.5vi;
+  }
+  body .ford-footer .ford-footer-container .row .row-element .list-unstyled li .animated-a:hover {
+    font-size: 1.7vi;
+  }
+}
+@media screen and (min-width: 958px) {
+  body .ford-footer .ford-footer-container .row .row-element .list-unstyled li .animated-a {
+    padding: 2% 0;
+    font-size: 1vi;
+  }
+  body .ford-footer .ford-footer-container .row .row-element .list-unstyled li .animated-a:hover {
+    font-size: 1.2vi;
+  }
+  body .ford-footer .ford-footer-container .row .row-element .list-unstyled li .animated-a .animated-a {
+    font-size: 1vi;
+  }
+  body .ford-footer .ford-footer-container .row .row-element .list-unstyled li .animated-a .animated-a:hover {
+    font-size: 1.4vi;
+  }
+}
+@media screen and (min-width: 768px) {
+  body .ford-footer .ford-footer-container .row .row-element .list-unstyled {
+    display: block;
+    padding: 0 0 0 0px;
+    width: 20vi;
+  }
+}/*# sourceMappingURL=style.css.map */

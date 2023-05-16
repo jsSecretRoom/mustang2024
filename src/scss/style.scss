@@ -1,0 +1,961 @@
+@font-face {
+    font-family: 'Cooper';
+    src: url('../fonts/Cooper-Black-Regular.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Impact';
+    src: url('../fonts/Impact-Regular.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.ttf') format('woff2');
+}
+
+body {
+    overflow-x: hidden;
+    header{
+        display: none;
+        grid-template-columns: 1fr;
+        width: 100vi;
+        height: 90vh;
+        @media screen and (min-width: 480px){
+            display: grid;
+        }
+        @media screen and (min-width: 768px) {
+            display: grid;
+        }
+        @media screen and (min-width: 958px) {
+            height: 40vi;
+        }
+        .market {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 4vi;
+            padding: 2% 1% 1% 1%;
+            height: 90vh;
+            @media screen and (min-width: 480px) {
+                grid-template-rows: 1fr 8vi;
+            }
+            @media screen and (min-width: 768px) {
+                grid-template-rows: 1fr 6vi;
+            }
+            @media screen and (min-width: 958px) {
+                height: 40vi;
+            }
+
+            .ford-home{
+                position: absolute;
+                height: 3vi;
+                width: 3vi;
+                top: 1vi;
+                right: 1vi;
+                border-radius: 10px;
+                background: none;
+                z-index: 1;
+                &:hover {
+                    background-color: #0062ff;
+                    transition: background-color 0.5s ease;
+                }
+                  
+                img{
+                    height: 3vi;
+                    width: 3vi;
+                    
+                }
+                @media screen and (min-width: 480px) {
+                    width: 6vi;
+                    height: 6vi;
+                    img{
+                        width: 6vi;
+                        height: 6vi;
+                    }
+                }
+                @media screen and (min-width: 768px) {
+                    width: 5vi;
+                    height: 5vi;
+                     
+                    img{
+                        width: 5vi;
+                        height: 5vi;
+                    }
+                }
+                @media screen and (min-width: 958px) {
+                    width: 4vi;
+                    height: 4vi;
+                     
+                    img{
+                        width: 4vi;
+                        height: 4vi;
+                    }
+                }
+            }
+            .tabs-market {
+                display: flex;
+                flex-direction: column;
+                width: 30vi;
+                overflow-y: auto;
+                direction: rtl;
+                text-align: left;
+                z-index: 1;
+                @media screen and (min-width: 480px) {
+                    width: 70vi;
+                }
+                
+                .category {
+                    display: block;
+                    &.hide{
+                        display: none;
+                    }
+                    .category-button {
+                        font-family: 'Impact';
+                        color: #ffffff;
+                        padding: 2px 0;
+                        font-size: 2vi;
+                        letter-spacing: 1px;
+    
+                        
+                        background-color: transparent;
+                        position: relative;
+                        overflow: hidden;
+                        transition: all 0.5s ease;
+                        white-space: nowrap;
+                        &:hover{
+                            font-size: 2.5vi;
+                            color: #00ffcc;
+                        }
+                        @media screen and (min-width: 480px) {
+                            font-size: 4vi;
+                            &:hover{
+                                font-size: 4.5vi;
+                            }
+                        }
+                        @media screen and (min-width: 768px) {
+                            font-size: 3vi;
+                            &:hover{
+                                font-size: 3.5vi;
+                            }
+                        }
+                        @media screen and (min-width: 958px) {
+                            font-size: 2vi;
+                            &:hover{
+                                font-size: 2.5vi;
+                            }
+                        }
+                    }
+                    .category-list {
+                        display: none;
+                        font-family: 'Inter';
+                        padding: 0 0 0 20px;
+                        &.show{
+                            display: block;
+                            animation: slide-in 0.5s ease-in-out;
+    
+                            @keyframes slide-in {
+                                from {
+                                  transform: translateY(-10px);
+                                  opacity: 0;
+                                }
+                              
+                                to {
+                                  transform: translateY(0);
+                                  opacity: 1;
+                                }
+                            }
+                        }
+                        li{
+                            
+                            .animated-button{
+                                color: #ffffff;
+                                background: none;
+                                padding: 2px;
+                                font-size: 1.5vi;
+    
+                                background-color: transparent;
+                                position: relative;
+                                overflow: hidden;
+                                transition: all 0.5s ease;
+                                white-space: nowrap;
+                                &:before{
+                                    content: "";
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: 0;
+                                    width: 0;
+                                    height: 2px;
+                                    background-color: #000;
+                                    transition: width 1s ease;
+                                }
+                                &:hover{
+                                    background: linear-gradient(90deg, #FF0000 0%, #017DCD 100%);
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                    background-clip: text;
+                                    font-size: 2vi;
+                                    color: #00ffcc;
+                                }
+                                &:hover:before {
+                                    width: 100%;
+                                }
+                                @media screen and (min-width: 480px) {
+                                    font-size: 4vi;
+                                    &:hover{
+                                        font-size: 5vi;
+                                        
+                                    }
+                                }
+                                @media screen and (min-width: 768px) {
+                                    font-size: 2vi;
+                                    &:hover{
+                                        font-size: 2.5vi;
+                                        
+                                    }
+                                }
+                                @media screen and (min-width: 958px) {
+                                    font-size: 1.5vi;
+                                    &:hover{
+                                        font-size: 2vi;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            .price-market {
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+                z-index: 1;
+                .ford-market-car {
+                    
+                    p{
+                        font-family: 'Cooper';
+                        font-size: 4vi;
+                        color: #ffffff;
+                    }
+                }
+                .ford-market-price {
+                    p{
+                        font-family: 'Cooper';
+                        font-size: 4vi;
+                        color: #ffffff;
+                    }
+                }
+                @media screen and (min-width: 480px) {
+                    justify-content: center;
+                    
+                    .ford-market-car {
+                        display: none;
+                    }
+                    .ford-market-price {
+                        p{
+                            font-size: 8vi;
+                        }
+                    }
+                }
+                @media screen and (min-width: 768px) {
+                    justify-content: space-between;
+                    .ford-market-car {
+                        display: block;
+                        p{
+                            font-size: 4vi;
+                        }
+                    }
+                    .ford-market-price {
+                        p{
+                            font-size: 4vi;
+                        }
+                    }
+                }
+                @media screen and (min-width: 958px) {
+                    justify-content: space-between;
+                    .ford-market-car {
+                        display: block;
+                        p{
+                            font-size: 3vi;
+                        }
+                    }
+                    .ford-market-price {
+                        p{
+                            font-size: 3vi;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .car-foto-conteiner{
+            width: 100vi;
+            height: 90vh;
+            position: absolute;
+            grid-template-columns: 1fr;
+            img{
+                width: 100vi;
+                height: 90vh;
+                object-fit: cover; /* Масштабирует изображение, сохраняя пропорции и заполняя блок */
+                object-position: center; /* Центрирует изображение в блоке */
+            }
+            @media screen and (min-width: 958px) {
+                height: 40vi;
+                img{
+                    height: 40vi;
+                }
+            }
+        }
+        
+    }
+    
+    
+    .ford-nav-bar{
+        background: linear-gradient(90.3deg, #017FCF 0%, #0A1D46 100%);
+        padding: 0% 1%;
+        height: 20vi;
+        width: 100%;
+        z-index: 3;
+        position: sticky;
+        top: 0;
+        left: 0;
+        @media screen and (min-width: 480px) {
+            width: 100vi;
+            .nav-continers {
+                .left-nav-continer {
+                    a{
+                        img{
+                            width: 25vi;
+                        }
+                    }
+                }
+            }      
+        }
+        @media screen and (min-width: 768px) {
+            height: 10vi;
+        }
+        @media screen and (min-width: 958px) {
+            height: 5vi;
+        }
+        .nav-continers {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            height: 20vi;
+            @media screen and (min-width: 768px) {
+                height: 10vi;
+            }
+            @media screen and (min-width: 958px) {
+                justify-content: space-between;
+                height: 5vi;
+            }
+            .left-nav-continer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                column-gap: 20px;
+                
+                a{
+                    img{
+                        width: 35vi;
+                    }
+                }
+                
+                .vehicles-button, .shop-button, .support-service-button {
+                    background: none;
+                    font-size: 1.5vi;
+                    font-family: 'Inter';
+                    display: none;
+    
+                    background-color: transparent;
+                    position: relative;
+                    overflow: hidden;
+                    transition: all 0.5s ease;
+                    white-space: nowrap;
+                    &:hover{
+                        font-size: 2vi;
+                        color: #00ffcc;
+                    }
+                }
+                @media screen and (min-width: 768px) {
+                    a{
+                        img{
+                            width: 15vi;
+                        }
+                    }
+        
+                    .vehicles-button, .shop-button, .support-service-button {
+                        display: block;
+                        font-size: 3vi;
+                        &:hover{
+                            font-size: 4vi;
+                        }
+                    }
+                }
+                @media screen and (min-width: 958px) {
+                    a{
+                        img{
+                            width: 7vi;
+                        }
+                    }
+                    .vehicles-button, .shop-button, .support-service-button {
+                        font-size: 1.5vi;
+                        &:hover{
+                            font-size: 2vi;
+                        }
+                    }
+                }
+            }
+            
+            .right-nav-continer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                column-gap: 20px;
+                
+                .authorization-button, .languages-button,.theme-button{
+                    display: none;
+                    width: 3vi;
+                    height: 3vi;
+                    background: linear-gradient(180deg, #091E48 0%, #017DCD 100%);
+                    border-radius: 10px;
+                    &:hover{
+                        background: linear-gradient(180deg, #017DCD 0%, #091E48 100%);
+                    }
+                    img{
+                        width: 2vi;
+                        height: 2vi;
+                    }
+                    @media screen and (min-width: 768px) {
+                        display: block;
+                        width: 5vi;
+                        height: 5vi; 
+                        img{
+                            width: 5vi;
+                            height: 5vi;
+                        }
+                    }
+                    @media screen and (min-width: 958px) {
+                        width: 3vi;
+                        height: 3vi;
+                        img{
+                            width: 2vi;
+                            height: 2vi;
+                        }
+                    }
+                }
+
+                .search-wrapper{
+                    position: relative;
+                    display: none;
+                    input{
+                        width: 3vi;
+                        height: 3vi;
+                        border-radius: 10px;
+                        border: none;
+                        padding: 0 1.5vi 0 1.5vi;
+                        transition: all 0.4s ease-in-out;
+                        
+                        top: 0;
+                        right: 0;
+                        z-index: 1;
+                        color: #000000;
+                        font-size: 18px;
+                        letter-spacing: 0.5px;
+                    }
+    
+                    input[type="text"] {
+                        
+                        &:focus {
+                          width: 40vi;
+                          border-radius: 50px;
+                        }
+                    }
+                    
+                    .search-button {
+                        position: absolute;
+                        top: 0.25vi;
+                        right: 0.20vi;
+                        width: 2.5vi;
+                        height: 2.5vi;
+                        border-radius: 50px;
+                        border: none;
+                        background-color: #1c61e2;
+                        cursor: pointer;
+                        transition: all 0.4s ease-in-out;
+                        z-index: 2;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        &:hover {
+                            background-color: #ff7830;
+                        }
+    
+                        img {
+                            width: 2vi;
+                            height: 2vi;
+                        }
+                    }
+                    @media screen and (min-width: 768px) {
+                        display: inline-block;
+                            
+                        input{
+                            width: 5vi;
+                            height: 5vi;
+                        }
+        
+                        .search-button {
+                            
+                            top: 0.2vi;
+                            right: 0.2vi;
+                            width: 4.5vi;
+                            height: 4.5vi;
+                            
+                            img {
+                                width: 4vi;
+                                height: 4vi;
+                            }
+                        }
+                    }
+                    @media screen and (min-width: 958px) {
+                        input{
+                            width: 3vi;
+                            height: 3vi;
+                        }
+                        .search-button {
+                            
+                            width: 2.5vi;
+                            height: 2.5vi;
+                            img {
+                                width: 2vi;
+                                height: 2vi;
+                            }
+                        }
+                    }
+                }
+                .close-wraper{
+                    display: none;
+                    background: none;
+                    border-radius: 15px;
+                    &:hover{
+                        background: rgb(41, 136, 203);
+                    }
+                    img{
+                        width: 3vi;
+                        height: 3vi;
+                    }
+                    @media screen and (min-width: 768px) {
+                        img{
+                            width: 5vi;
+                            height: 5vi;
+                        }
+                    }
+                    @media screen and (min-width: 958px) {
+                        img{
+                            width: 3vi;
+                            height: 3vi;
+                        }
+                    }
+                }
+            }
+            .main-button-conteiner{
+                display: block;
+                .main-button{
+                    background: none;
+                    img{
+                        width: 10vi;
+                        height: 10vi;
+                    }
+                    
+                }
+                @media screen and (min-width: 768px) {
+                    display: none;
+                    .main-button{
+                        background: none;
+                        @media screen and (min-width: 768px) {
+                            display: none;
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        
+        .component1,.component2,.component4,.component5{
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            .conteiner1 {
+                height: calc(100vi/3);
+                
+            }
+            .conteiner2 {
+                height: calc(100vi/3);
+                
+            }
+            .conteiner3 {
+                height: calc(100vi/3);
+                
+            }
+        }
+        
+        .component3,.component6 {
+            display: grid;
+            align-items: center;
+            .conteiner1-component2 {
+                height: calc(100vi/3);
+            }
+            .conteiner2-component2 {
+                height: calc(100vi/3);
+            }
+        }
+    
+        .component1{
+            
+            .conteiner1{
+                background: linear-gradient(130deg, #017ECD 0%, #021327 100%);
+                padding: 1%;
+                .content1{
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(94.94deg, #017FCF 0%, #091D47 100%);
+                }
+            }
+            .conteiner2 {
+                
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .conteiner3 {
+                background: linear-gradient(98.02deg, #C0C1DF 9.4%, #0065E8 90.87%);
+                padding: 1%;
+                .content1{
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+                }
+            }
+        }
+        .component2{
+            .conteiner1, .conteiner3{
+                background: linear-gradient(130deg, #017ECD 0%, #021327 100%);
+                display: flex;
+                justify-content: space-between;
+                img{
+                    width: calc(100vi/3);
+                    height: calc(100vi/3);
+                }
+                
+                .window{
+                    padding: 1%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(104.04deg, #000000 0%, #0065E8 100%);
+                    .window-items{
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(82.46deg, #000000 5.84%, #0065E8 94.15%);
+                    }
+                }
+            }
+            .conteiner2 {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+                .ford2{
+                    width: calc((100vi/3)*2);
+                    height: calc(100vi/3);
+                }
+                .ford3{
+                    width: calc(100vi/3);
+                    height: calc(100vi/3);
+                }
+            }
+            .conteiner3 {
+                background: linear-gradient(98.02deg, #8FA1DB 9.4%, #111F37 90.87%);
+                .content1{
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+                }
+            }
+        }
+        .component3{
+            .conteiner1-component2 {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                img{
+                    width: calc(100vi/3);
+                }
+            }
+            .conteiner2-component2 {
+                background: linear-gradient(96.21deg, #010109 0.21%, #667C94 100%);
+                padding: 1%;
+                .content2{
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+                }
+            }
+        }
+        .component4{
+            .conteiner1 {
+                display: flex;
+                justify-content: space-between;
+                .ford9 {
+                    width: calc((100vi/3)*2);
+                    height: calc(100vi/3);
+                }
+                .ford10 {
+                    
+                    height: calc(100vi/3);
+                    width: calc(100vi/3);
+                }
+            }
+            
+            .conteiner2 {
+                display: flex;
+                justify-content: space-between;
+                .ford11 {
+                    height: calc(100vi/3);
+                    width: calc(100vi/3);
+                }
+                .ford12 {
+                    width: calc((100vi/3)*2);
+                    height: calc(100vi/3);
+                    
+                }
+            }
+            
+            .conteiner3 {
+                background: linear-gradient(83.66deg, #6B7591 0%, #041328 100%);
+                padding: 1%;
+                .content3 {
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+                }
+            }
+            
+        }
+        .component5{
+            .conteiner1{
+                img{
+                    width: 100%;
+                        height: 100%;
+                }
+                
+            }
+            .conteiner2{
+                background: linear-gradient(96.34deg, #565A74 0%, #001224 100%);
+                padding: 1%;
+                .content4{
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+                }
+            }
+            .conteiner3{
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .component6{
+            .conteiner1-component2 {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                img{
+                    width: calc(100vi/3);
+                }
+            }
+            .conteiner2-component2 {
+                background: linear-gradient(90deg, #7385AE 0%, #074166 100%);
+                padding: 1%;
+                .content5{
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(94.94deg, #2F7BAC 0%, #091D47 100%);
+                }
+            }
+        }
+        
+    }
+    
+    
+    .ford-footer {
+        background: linear-gradient(90.3deg, #017FCF 0%, #0A1D46 100%);
+        height: 80vi;
+        @media screen and (min-width: 768px) {
+            height: 40vi;
+        }
+        @media screen and (min-width: 958px) {
+            height: 25vi;
+        }
+        .ford-footer-container {
+            padding: 2% 5%;
+            display: flex;
+            flex-direction: column;
+            .row {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                @media screen and (min-width: 768px) {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    text-align: left;
+                    align-items: start;
+                }
+                .row-element {
+                    .list-button{
+                        
+                        font-family: 'Impact';
+                        color: #ffffff;
+                        font-size: 8vi;
+                        padding: 8% 0;
+                        letter-spacing: 1px;
+    
+                        
+                        background-color: transparent;
+                        position: relative;
+                        overflow: hidden;
+                        transition: all 0.5s ease;
+                        white-space: nowrap;
+                        &:hover{
+                            font-size: 10vi;
+                            color: #00ffcc;
+                        }
+                        @media screen and (min-width: 480px) {
+                            font-size: 7vi;
+                            padding: 4% 0;
+                            
+                            &:hover{
+                                font-size: 8vi;
+                                color: #00ffcc;
+                            }
+                        }
+                        @media screen and (min-width: 768px) {
+                            font-size: 2vi;
+                            padding: 4% 0;
+                            pointer-events: none;
+                            &:hover{
+                                font-size: 3vi;
+                                
+                            }
+                        }
+                        @media screen and (min-width: 958px) {
+                            font-size: 1.7vi;
+                            &:hover{
+                                font-size: 2.5vi;
+                            }
+                        }
+                    }
+                    .list-unstyled {
+                        display: none;
+                        font-family: 'Inter';
+                        padding: 0 0 0 20px;
+                        &.show{
+                            display: block;
+                            animation: slide-in 0.5s ease-in-out;
+    
+                            @keyframes slide-in {
+                                from {
+                                  transform: translateY(-10px);
+                                  opacity: 0;
+                                }
+                              
+                                to {
+                                  transform: translateY(0);
+                                  opacity: 1;
+                                }
+                            }
+                        }
+                        li{
+                            padding: 4% 0;
+                            
+                            .animated-a{
+                                color: #ffffff;
+                                background: none;
+                                padding: 2px;
+                                font-size: 5vi;
+    
+                                background-color: transparent;
+                                position: relative;
+                                overflow: hidden;
+                                transition: all 0.5s ease;
+                                white-space: nowrap;
+                                &:before{
+                                    content: "";
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: 0;
+                                    width: 0;
+                                    height: 2px;
+                                    background-color: #000;
+                                    transition: width 1s ease;
+                                }
+                                &:hover{
+                                    background: linear-gradient(90deg, #FF0000 0%, #e8ff1c 100%);
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                    background-clip: text;
+                                    font-size: 6vi;
+                                    color: #00ffcc;
+                                }
+                                &:hover:before {
+                                    width: 100%;
+                                }
+                                @media screen and (min-width: 768px) {
+                                    font-size: 1.5vi;
+
+                                    &:hover{
+                                        
+                                        font-size: 1.7vi;
+                                        
+                                    }
+                                }
+                                @media screen and (min-width: 958px) {
+                                    padding: 2% 0;
+                                    font-size: 1vi;
+                                    &:hover{
+                                        font-size: 1.2vi;
+                                    }
+                                    .animated-a{
+                                        font-size: 1vi;
+                                        &:hover{
+                                            font-size: 1.4vi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        @media screen and (min-width: 768px) {
+                            display: block;
+                            padding: 0 0 0 0px;
+                            width: 20vi;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

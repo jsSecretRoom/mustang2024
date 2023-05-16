@@ -1,0 +1,50 @@
+[
+    {
+        "carClass": "SUVs & Cars",
+        "name": "Escape",
+        "price": 20000,
+        "carImg": "src/#",
+        "hybrid": true,
+        "electric": false
+    },
+    {
+        "carClass": "Trucks",
+        "name": "Maverick",
+        "price": 20000,
+        "carImg": "src/#",
+        "hybrid": true,
+        "electric": false
+    },
+    {
+        "carClass": "Electrified",
+        "name": "F-150",
+        "price": 20000,
+        "carImg": "src/#",
+        "hybrid": true,
+        "electric": false
+    },
+    {
+        "carClass": "Performance Vehicles",
+        "name": "EDGE ST",
+        "price": 20000,
+        "carImg": "src/#",
+        "hybrid": true,
+        "electric": false
+    },
+    {
+        "carClass": "Commercial Vehicles",
+        "name": "E-Series Stripped Chassis",
+        "price": 20000,
+        "carImg": "src/#",
+        "hybrid": true,
+        "electric": false
+    },
+    {
+        "carClass": "Future Vehicles",
+        "name": "Bronco Sport",
+        "price": 20000,
+        "carImg": "src/#",
+        "hybrid": true,
+        "electric": false
+    }
+]
